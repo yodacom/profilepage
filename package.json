@@ -1,0 +1,33 @@
+{
+  "name": "yarn",
+  "version": "1.0.0",
+  "description": "jeremy black portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yodacom/profilepage.git"
+  },
+  "keywords": [
+    "full",
+    "stack",
+    "developer",
+    "software",
+    "speaker"
+  ],
+  "author": "Jeremy Black",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yodacom/profilepage/issues"
+  },
+  "homepage": "https://github.com/yodacom/profilepage#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "modernizr": "^3.4.0",
+    "webpack": "^2.3.2"
+  }
+}
