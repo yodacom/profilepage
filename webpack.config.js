@@ -2,9 +2,9 @@ const webpack = require("webpack");
 const path = require("path");
 
 const config = {
-	context: __dirname + "/src", // `__dirname` is root of project and `src` is source
+	context: __dirname + "/js", // `__dirname` is root of project and `src` is source
 	entry: {
-		app: "./app.js",
+		app: "./main.js",
 	},
 	output: {
 		path: __dirname + "/dist", // `dist` is the destination
@@ -22,18 +22,23 @@ const config = {
 			},
 
             {
-        test: /\.styl$/i,
-        use: [
-            'style-loader',
-            'css-loader',
-            'stylus-loader'
-        ]
-	]
+                test: /\.styl$/i,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'stylus-loader'
+                ]
+            },
+			{
+				test: /\.svg$/,
+				loader: 'svg-inline-loader'
+			}
+		]
 	},
 
 	devServer: {
 		open: true, // to open the local server in browser
-		contentBase: __dirname + "/src",
+		contentBase: __dirname,
 	},
 
 
