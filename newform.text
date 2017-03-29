@@ -1,0 +1,73 @@
+<!-- Old form -->
+<!--
+            <form name="contactForm" id="contactForm" method="post" action="">
+      			<fieldset>
+
+                  <div class="form-field">
+ 						   <input name="Name" type="text" id="Name" placeholder="Name" value="" minlength="2" required="">
+                  </div>
+                  <div class="form-field">
+	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+	               </div>
+                  <div class="form-field">
+	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
+	               </div>                       
+                  <div class="form-field">
+	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
+	               </div>                      
+                 <div class="form-field">
+                     <button class="submitform">Submit</button>
+                     <div id="submit-loader">
+                        <div class="text-loader">Sending...</div>                             
+       				      <div class="s-loader">
+								  	<div class="bounce1"></div>
+								  	<div class="bounce2"></div>
+								  	<div class="bounce3"></div>
+								</div>
+							</div>
+                  </div>
+
+      			</fieldset>
+      		</form> 
+			  
+			 Old Form End -->
+
+			 <!-- New SendInBlueform -->
+			 		
+        <div class="wrapper" style="width:540px; margin:0 auto 80px auto; text-align:left;">
+            <form class="description" style="padding: 3px; text-align: center; border: 0px none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 17px; color: rgb(52, 52, 52);" action="https://my.sendinblue.com/users/subscribe/" method="post" onsubmit="return false">
+            <input type="hidden" name="hdn_email_txt" id="hdn_email_txt" value="" style="font-family: "Trebuchet MS", Verdana, Tahoma, Geneva, sans-serif; font-size: 13px;">
+	    <input type="hidden" name="js_id" id="js_id" value="2qo9s" style="font-family: "Trebuchet MS", Verdana, Tahoma, Geneva, sans-serif; font-size: 13px;">  	
+	    <input type="hidden" name="primary_type" id="primary_type" value="email" style="font-family: "Trebuchet MS", Verdana, Tahoma, Geneva, sans-serif; font-size: 13px;">
+              <div class="sib-container rounded" style="border-radius: 4px; position: relative; margin: 0px; text-align: left; background: rgb(252, 252, 252); padding: 40px 20px 20px; border-width: 0px !important; border-color: transparent !important;">
+               <input type="hidden" name="req_hid" id="req_hid" value="~Captcha~NAME~SUBJECT~MESSAGE" style="font-size: 13px; font-family: "Trebuchet MS", Verdana, Tahoma, Geneva, sans-serif;">
+               <div class="header" style="padding:0 20px;">
+                    <h1 class="title editable" data-editfield="newsletter_name" contenteditable="true" style="font-weight: normal; text-align: left; font-size: 45px; margin-bottom: 2px; padding: 0px; margin-top: 0px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(35, 35, 35);">Contact Me</h1>
+  		    <h3 id="company-name" contenteditable="true" style="font-weight: normal; text-align: left; font-size: 25px; margin-bottom: 12px; padding: 0px; margin-top: 0px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(52, 52, 52); display: none;">By</h3>
+                </div>
+                    <div class="description editable" data-editfield="newsletter_description" contenteditable="true" style="padding: 0px 20px 15px; border-bottom: 1px solid rgb(204, 204, 204); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(52, 52, 52); font-size: 17px; display: none;">What type of content do you plan to share with your subscribers? </div>
+                    <div class="view-messages" style=" margin:5px 0;"> </div>
+                        <!-- an email as primary -->
+            <div class="primary-group email-group forms-builder-group ui-sortable" style="">
+                <div class="row mandatory-email" style="padding: 10px 20px; position: relative; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(52, 52, 52); font-size: 17px;">
+                    <div class="lbl-tinyltr" contenteditable="true" style="clear: both; float: none; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;">Your email <red style="color:#ff0000;">*</red></div>
+                    <input type="text" name="email" id="email" value="" style="padding: 10px 4px; width: 90%; min-width: auto;">
+                    <div style="clear:both;"></div>
+                    <div class="hidden-btns">
+                        <a class="btn move" href="#"><i class="fa fa-arrows"></i></a><br>
+                        <!--<a class="btn btn-danger delete"  href="#"><i class="fa fa-trash-o fa-inverse"></i></a>-->
+                    </div>
+                </div>
+                
+            <div class="row" style="padding:10px 20px; font-size:17px; position:relative;"><div class="lbl-tinyltr" contenteditable="true" style="clear:both; float:none;">Name<red style="color:#ff0000;">*</red></div>											<input type="text" name="NAME" id="NAME" value="" style="display:block; float:left; margin-right:3%; min-width:auto; width:90%; padding:10px 4px; border:1px solid #ccc; -moz-border-radius:4px; border-radius:4px; -webkit-border-radius:4px; font-size:13px;">										    <div class="clear" style="clear:both;"></div>										    <div class="hidden-btns">											<a class="btn move" href="#"><i class="fa fa-arrows"></i></a><br>											<a class="btn btn-danger delete" href="#"><i class="fa fa-trash-o fa-inverse"></i></a>										</div>									</div><div class="row" style="padding:10px 20px; font-size:17px; position:relative;"><div class="lbl-tinyltr" contenteditable="true" style="clear:both; float:none;">Subject:<red style="color:#ff0000;">*</red></div>											<input type="text" name="SUBJECT" id="SUBJECT" value="" style="display:block; float:left; margin-right:3%; min-width:auto; width:90%; padding:10px 4px; border:1px solid #ccc; -moz-border-radius:4px; border-radius:4px; -webkit-border-radius:4px; font-size:13px;">										    <div class="clear" style="clear:both;"></div>										    <div class="hidden-btns">											<a class="btn move" href="#"><i class="fa fa-arrows"></i></a><br>											<a class="btn btn-danger delete" href="#"><i class="fa fa-trash-o fa-inverse"></i></a>										</div>									</div><div class="row" style="padding:10px 20px; font-size:17px; position:relative;"><div class="lbl-tinyltr" contenteditable="true" style="clear:both; float:none;">Message<red style="color:#ff0000;">*</red></div>											<input type="text" name="MESSAGE" id="MESSAGE" value="" style="display:block; float:left; margin-right:3%; min-width:auto; width:90%; padding:10px 4px; border:1px solid #ccc; -moz-border-radius:4px; border-radius:4px; -webkit-border-radius:4px; font-size:13px;">										    <div class="clear" style="clear:both;"></div>										    <div class="hidden-btns">											<a class="btn move" href="#"><i class="fa fa-arrows"></i></a><br>											<a class="btn btn-danger delete" href="#"><i class="fa fa-trash-o fa-inverse"></i></a>										</div>									</div></div>
+                                        <div class="captcha forms-builder-group"><div class="row" style="font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(52, 52, 52); font-size: 17px; padding: 10px 20px;"><div id="gcaptcha"></div></div></div>
+                         
+            <!-- end of primary -->
+                         <div class="byline" style="font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(52, 52, 52); font-weight: bold; font-size: 16px; text-align: center; display: block;">
+                         <button class="button editable " type="submit" data-editfield="subscribe" contenteditable="true" style="font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(255, 255, 255); background: rgb(5, 5, 5); display: inline-block; white-space: nowrap; min-height: 40px; margin: 0px 5px 0px 0px; padding: 0px 22px; text-decoration: none; text-transform: uppercase; text-align: center; font-weight: bold; font-style: normal; font-size: 14px; cursor: pointer; border: 0px; border-radius: 4px; vertical-align: top; height: auto; line-height: 150%;">Send</button></div>
+                         <div style="clear:both;"></div>
+            </div>
+          </form>
+        </div>
+        
+			<!-- End New SendInBlueForm -->
