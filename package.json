@@ -26,9 +26,12 @@
   "devDependencies": {
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
     "babel-preset-es2015": "^6.24.0",
-    "css-loader": "^0.27.3",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
     "file-loader": "^0.10.1",
+    "image-webpack-loader": "^3.3.0",
     "lodash": "^4.17.4",
     "modernizr": "^3.4.0",
     "path": "^0.12.7",
@@ -36,12 +39,13 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "svg-inline-loader": "^0.7.1",
+    "url-loader": "^0.5.8",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
     "startServ": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack -p --config webpack.config.js",
+    "build": "webpack",
     "start": "webpack --watch"
   }
 }

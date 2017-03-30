@@ -1,14 +1,13 @@
 const webpack = require("webpack");
 const path = require("path");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
-	context: __dirname + "/js", // `__dirname` is root of project and `src` is source
-	entry: {
-		app: "./main.js",
-	},
+	entry: "./js/main.js",
 	output: {
-		path: __dirname + "/dist", // `dist` is the destination
-		filename: "[name].bundle.js",
+		path: path.resolve(__dirname, "dist"), // `dist` is the destination
+		filename: "bundle.js",
+		publicPath: 'dist/'
 	},
 	module: {
 		rules: [
@@ -17,33 +16,59 @@ const config = {
 				use: [{
 					loader: "babel-loader",
 					options: { presets: ["es2015"] }
-				}
-                ]
+				}]
 			},
-
-            {
-                test: /\.styl$/i,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'stylus-loader'
-                ]
-            },
+			{
+				loader: ExtractTextPlugin.extract({
+					loader: 'css-loader'
+				}),
+				test: /\.css$/
+			},
+			{
+				test: /\.(jpe?g|png|gif|svg)$/,
+				use: [
+					{
+						loader: "url-loader",
+						options: { limit: 40000 }
+					},
+					"image-webpack-loader"
+				]
+			},
+			{
+				test: /\.styl$/,
+				use: [{
+					loader: "style-loader"
+				}, {
+					loader:"css-loader",
+					options: {
+						sourceMap:true
+					}
+				}, {
+					loader:"stylus-loader",
+					options: {
+						sourceMap:true
+					}
+				}]
+			},
 			{
 				test: /\.svg$/,
-				loader: 'svg-inline-loader'
+				loader: "svg-inline-loader"
 			},
 			{
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
-				loader : 'file-loader'}
+				loader : "file-loader"}
 			
 		]
 	},
 
+	plugins: [
+		new ExtractTextPlugin('style.css')
+	],
+
 	devServer: {
 		open: true, // to open the local server in browser
 		contentBase: __dirname,
-	},
+	}
 
 
 };
