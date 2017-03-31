@@ -1,7 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const stylus_plugin = require("stylus_plugin");
 
 const config = {
 	entry: "./js/main.js",
@@ -18,32 +17,6 @@ const config = {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.css$/,
-				use:[
-					"style-loader",
-					"css-loader"
-					]
-				
-			},
-			{
-				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					fallback:"style-loader",
-					use:["css-loader","stylus-loader"]
-				}),
-				
-			},
-			{
-				test: /\.(jpe?g|png|gif|svg)$/,
-				use: [
-					{
-						loader: "url-loader",
-						options: { limit: 40000 }
-					},
-					"image-webpack-loader"
-				]
-			},
-			{
 				test: /\.styl$/i,
 				use: [
 					"style-loader",
@@ -58,9 +31,13 @@ const config = {
 			{
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 				use : "file-loader"
-			}
-			
-		]
+			},
+            {
+            	test: /\.(png|jpg)$/,
+				loader: 'url-loader?limit=8192'
+            }
+
+        ]
 	},
 
 	plugins: [
@@ -68,7 +45,11 @@ const config = {
 			filename:'style.css',
 			disable:false,
 			allChucks:true
-		})
+		}),
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
 	],
 
 	devServer: {
