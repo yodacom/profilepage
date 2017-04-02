@@ -1,13 +1,21 @@
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VENDOR_LIBS = [
+	"lodash", "jquery"
+];
 
 const config = {
-	entry: "./js/main.js",
+	entry:  {
+		bundle: "./js/main.js",
+		vendor: VENDOR_LIBS
+	},
+
 	output: {
-		path: path.resolve(__dirname, "dist"), // `dist` is the destination
-		filename: "bundle.js",
-		publicPath: 'dist/'
+		path: path.join(__dirname, "dist"), // `dist` is the destination
+		filename: "[name].js",
+		publicPath: "dist/"
 	},
 	module: {
 		rules: [
@@ -17,7 +25,7 @@ const config = {
 				exclude: /node_modules/
 			},
 			{
-				test: /\.styl$/i,
+				test: /\.(styl|css)$/i,
 				use: [
 					"style-loader",
 					"css-loader",
@@ -41,14 +49,21 @@ const config = {
 	},
 
 	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor'
+		}),
+
+		new HtmlWebpackPlugin({
+			template: 'js/index.html'
+		}),
 		new ExtractTextPlugin({
 			filename:'style.css',
 			disable:false,
 			allChucks:true
 		}),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
+		new webpack.ProvidePlugin({
+			$: "jquery",
+			jQuery: "jquery"
         })
 	],
 
