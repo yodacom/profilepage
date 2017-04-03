@@ -3,10 +3,11 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VENDOR_LIBS = [
-	"lodash", "jquery"
+	"lodash", "jquery", "modernizr", "pace"
 ];
 
-const config = {
+
+module.exports = {
 	entry:  {
 		bundle: "./js/main.js",
 		vendor: VENDOR_LIBS
@@ -14,8 +15,7 @@ const config = {
 
 	output: {
 		path: path.join(__dirname, "dist"), // `dist` is the destination
-		filename: "[name].js",
-		publicPath: "dist/"
+		filename: "[name].[chunkhash].js",
 	},
 	module: {
 		rules: [
@@ -40,31 +40,31 @@ const config = {
 				test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
 				use : "file-loader"
 			},
-            {
-            	test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=8192'
-            }
+			{
+				test: /\.(png|jpg)$/,
+				loader: "url-loader?limit=8192"
+			}
 
-        ]
+		]
 	},
 
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor'
+			names: ["vendor", "manifest"]
 		}),
 
 		new HtmlWebpackPlugin({
-			template: 'js/index.html'
+			template: "js/index.html"
 		}),
 		new ExtractTextPlugin({
-			filename:'style.css',
+			filename:"style.css",
 			disable:false,
 			allChucks:true
 		}),
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery"
-        })
+		})
 	],
 
 	devServer: {
@@ -74,4 +74,4 @@ const config = {
 
 };
 
-module.exports = config;
+// module.exports = config;
