@@ -2,6 +2,9 @@ const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const CommonsChunkPlugin = require("webpack.optimize.CommonsChunkPlugin");
+// const ProvidePlugin = require("webpack.ProvidePlugin");
+// const DefinePlugin = require("webpack.DefinePlugin");
 const VENDOR_LIBS = [
 	"lodash", "jquery", "pace"
 ];
@@ -66,14 +69,14 @@ module.exports = {
 			jQuery: "jquery"
 		}),
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+			"process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
 		})
 	],
 
 	devServer: {
 		open: true, // to open the local server in browser
-		contentBase: __dirname,
-	}
+		contentBase: __dirname
+	},
 
 };
 
