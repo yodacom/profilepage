@@ -25,7 +25,7 @@ Javascript Files:
  - Waypoints (http://imakewebthings.com/jquery-waypoints/)
  - Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/)
  - jQuery Placeholder (https://github.com/mathiasbynens/jquery-placeholder)
- - FitVids (http://fitvidsjs.com/)
+ -  (http://fitvidsjs.com/)
  - Fittext (http://fittextjs.com/)
  - jQuery Validator (http://jqueryvalidation.org/)
  - Imagesloaded (http://imagesloaded.desandro.com/)

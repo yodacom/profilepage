@@ -3,7 +3,7 @@ const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VENDOR_LIBS = [
-	"lodash", "jquery", "modernizr", "pace"
+	"lodash", "jquery", "pace"
 ];
 
 
@@ -64,6 +64,9 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery"
+		}),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
 		})
 	],
 

@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/yodacom/profilepage#readme",
   "dependencies": {
+    "fittext": "^1.0.1",
+    "fitvids": "^2.0.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "modernizr": "^3.4.0",
@@ -48,7 +50,7 @@
   },
   "scripts": {
     "startServ": "webpack-dev-server",
-    "build": "npm run clean && webpack",
+    "build": "NODE_ENV=production npm run clean && webpack -p",
     "start": "webpack --watch",
     "clean": "rimraf dist"
   }
