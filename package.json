@@ -451,7 +451,8 @@
     "yargs-parser": "^4.2.1"
   },
   "devDependencies": {
-    "babel": "^6.23.0"
+    "babel": "^6.23.0",
+    "surge": "^0.19.0"
   },
   "scripts": {
     "startServ": "webpack-dev-server",
