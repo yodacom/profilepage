@@ -2,9 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// const CommonsChunkPlugin = require("webpack.optimize.CommonsChunkPlugin");
-// const ProvidePlugin = require("webpack.ProvidePlugin");
-// const DefinePlugin = require("webpack.DefinePlugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
 const VENDOR_LIBS = [
 	"lodash", "jquery", "pace"
 ];
@@ -29,11 +27,11 @@ module.exports = {
 			},
 			{
 				test: /\.(styl|css)$/i,
-				use: [
+				use:[
 					"style-loader",
-					"css-loader",
-					"stylus-relative-loader"
-				]
+					"css-loader"
+					// "stylus-relative-loader"
+					]
 			},
 			{
 				test: /\.svg$/,
@@ -59,17 +57,21 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "js/index.html"
 		}),
-		new ExtractTextPlugin({
-			filename:"style.css",
-			disable:false,
-			allChucks:true
-		}),
+		// new ExtractTextPlugin({
+		// 	filename:"style.css",
+		// 	disable:false,
+		// 	allChucks:true
+		// }),
 		new webpack.ProvidePlugin({
 			$: "jquery",
 			jQuery: "jquery"
 		}),
 		new webpack.DefinePlugin({
 			"process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
+		}),
+		new ManifestPlugin({
+			fileName: "manifest.json",
+			basePath: "/js/"
 		})
 	],
 
@@ -79,5 +81,3 @@ module.exports = {
 	},
 
 };
-
-// module.exports = config;
